@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #3498db;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 40vh;
+  padding: 80px 20px;
+}
+
+#hero h2 {
+  margin-bottom: 15px;
+}
+
+#hero p {
+  margin-bottom: 20px;
+}
+
+#hero button {
+  padding: 12px 24px;
+  border: none;
+  background: #3498db;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#hero button:hover {
+  background: #2980b9;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #ecf0f1;
+  font-weight: bold;
+}
+
+#courses {
+  padding: 40px;
+}
+
+#courses h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 180px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+#loading {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3498db;
+}
+
+#total-credits {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#notifications {
+  padding: 40px;
+}
+
+#notifications h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#posts {
+  display: grid;
+  gap: 20px;
+}
+
+#spinner {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+#error-message {
+  color: red;
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+#retry-btn {
+  display: none;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#retry-btn:hover {
+  background: darkred;
+}
+
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #hero {
+    padding: 120px 20px;
+  }
+}
