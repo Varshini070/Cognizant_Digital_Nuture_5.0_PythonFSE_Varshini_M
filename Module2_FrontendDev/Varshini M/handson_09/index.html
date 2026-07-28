@@ -1,0 +1,192 @@
+<!--
+Accessibility Audit (Lighthouse)
+
+Initial Accessibility Score:87
+
+Colour Contrast
+
+Before:
+Text: #777777
+Background: #FFFFFF
+Contrast Ratio: Failed (<4.5:1)
+
+After:
+Text: #333333
+Background: #FFFFFF
+Contrast Ratio: Passed (4.5:1+)
+
+CSS Feature Support
+
+Feature Checked:
+CSS Grid
+
+Source:
+https://caniuse.com/css-grid
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Portal</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Student Portal</h1>
+
+      <img
+        src="https://cdn.vectorstock.com/i/500p/21/55/virtual-learning-platform-vector-61512155.jpg"
+        alt="Illustration of students using an online learning platform"
+      />
+
+      <button
+        id="menuButton"
+        class="menu-btn"
+        aria-label="Toggle Navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav id="mainNav" aria-label="Main Navigation">
+        <ul>
+          <li>
+            <a href="#" aria-current="page"> Home </a>
+          </li>
+
+          <li>
+            <a href="#courses"> Courses </a>
+          </li>
+
+          <li>
+            <a href="#profile"> Profile </a>
+          </li>
+
+          <li>
+            <a href="#"> Grades </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <h2>Welcome to the Student Portal</h2>
+
+        <p>All academic activities in one place.</p>
+
+        <button>Explore Courses</button>
+      </section>
+
+      <section class="stats">
+        <h2>Student Statistics</h2>
+
+        <div>Courses Enrolled: 3</div>
+        <div>GPA: 3.8</div>
+        <div>Semester: 6</div>
+      </section>
+
+      <section id="courses">
+        <h2>Courses</h2>
+
+        <label for="search"> Search Courses </label>
+
+        <input id="search" type="text" placeholder="Search courses..." />
+
+        <p id="resultsCount" role="status" aria-live="polite">
+          5 courses found
+        </p>
+
+        <div class="course-grid">
+          <article class="course-card" tabindex="0">
+            <h3>Web Development</h3>
+
+            <p>Learn HTML, CSS and JavaScript.</p>
+
+            <span> Credits: 3 </span>
+
+            <button>Enroll</button>
+          </article>
+
+          <article class="course-card" tabindex="0">
+            <h3>Data Structures</h3>
+
+            <p>Learn arrays, trees and graphs.</p>
+
+            <span> Credits: 4 </span>
+
+            <button>Enroll</button>
+          </article>
+
+          <article class="course-card" tabindex="0">
+            <h3>Database Systems</h3>
+
+            <p>SQL, NoSQL and normalization.</p>
+
+            <span> Credits: 3 </span>
+
+            <button>Enroll</button>
+          </article>
+
+          <article class="course-card" tabindex="0">
+            <h3>Computer Networks</h3>
+
+            <p>TCP/IP, Routing and Switching.</p>
+
+            <span> Credits: 3 </span>
+
+            <button>Enroll</button>
+          </article>
+
+          <article class="course-card" tabindex="0">
+            <h3>Operating Systems</h3>
+
+            <p>Processes, Threads and Scheduling.</p>
+
+            <span> Credits: 4 </span>
+
+            <button>Enroll</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="profile">
+        <h2>Student Profile</h2>
+
+        <form>
+          <label for="name"> Name </label>
+
+          <input id="name" type="text" />
+
+          <label for="email"> Email </label>
+
+          <input id="email" type="email" />
+
+          <label for="semester"> Semester </label>
+
+          <input id="semester" type="number" />
+
+          <button type="submit">Save Profile</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Student Portal</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+
+    <script>
+      cssVars();
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
