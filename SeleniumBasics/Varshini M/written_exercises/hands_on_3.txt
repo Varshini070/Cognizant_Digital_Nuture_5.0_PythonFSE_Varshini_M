@@ -1,0 +1,37 @@
+Hands-on Exercise 3: Dropdown, Alerts, and Waits
+
+Question:
+Write a Python script to open a demo page, select an option from a dropdown, handle an alert, and wait for an element to appear.
+
+Answer:
+Use the Select class for dropdown handling, WebDriverWait for waiting, and switch_to.alert for alert handling.
+
+Python code:
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select, WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+
+
+def main():
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver.maximize_window()
+
+    driver.get("https://the-internet.herokuapp.com/dropdown")
+    dropdown = Select(driver.find_element(By.ID, "dropdown"))
+    dropdown.select_by_visible_text("Option 1")
+    print("Selected option:", dropdown.first_selected_option.text)
+
+    driver.get("https://the-internet.herokuapp.com/javascript_alerts")
+    driver.find_element(By.XPATH, "//button[text()='Click for JS Alert']").click()
+    alert = WebDriverWait(driver, 10).until(EC.alert_is_present())
+    alert.accept()
+    print("Alert handled successfully.")
+
+    driver.quit()
+
+
+if __name__ == "__main__":
+    main()

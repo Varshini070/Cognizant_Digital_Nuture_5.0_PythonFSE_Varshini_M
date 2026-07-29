@@ -1,0 +1,30 @@
+Hands-on Exercise 2: Locating Elements and Performing a Search
+
+Question:
+Write a Python program to open Google, locate the search box, enter a query, and submit the search.
+
+Answer:
+Use the name locator for the Google search field and submit the form after entering the text.
+
+Python code:
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
+
+def main():
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver.maximize_window()
+    driver.get("https://www.google.com")
+
+    search_box = driver.find_element(By.NAME, "q")
+    search_box.send_keys("Selenium Python")
+    search_box.submit()
+
+    print("Search page title:", driver.title)
+    driver.quit()
+
+
+if __name__ == "__main__":
+    main()
